@@ -19,7 +19,8 @@ public class Student {
     }
 
     public Student(String name, int studentId) {
-        this(name, studentId, 0, 0);
+        this.name = name;
+        this.studentId = studentId;
     }
 
     public String getName() {

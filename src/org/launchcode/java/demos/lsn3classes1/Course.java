@@ -10,7 +10,7 @@ public class Course {
     private Course(String name, double credits) {
         this.name = name;
         this.credits = credits;
-        this.roster = new ArrayList<>(); //empty array list
+        this.roster = new ArrayList<Student>(); //empty array list
     }
 
 }
