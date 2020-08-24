@@ -3,14 +3,14 @@ import java.util.ArrayList;
 
 public class Course {
 
-    public String name;
-    protected ArrayList<String> students;
-    private String location;
+    private String name;
+    private double credits;
+    private ArrayList<Student> roster;
 
-    private Course(String name, ArrayList students, String location) {
+    private Course(String name, double credits) {
         this.name = name;
-        this.students = students;
-        this.location = location;
+        this.credits = credits;
+        this.roster = new ArrayList<>(); //empty array list
     }
 
 }
