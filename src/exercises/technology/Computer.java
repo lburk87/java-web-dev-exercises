@@ -1,20 +1,28 @@
 package exercises.technology;
 
-public class Computer {
+import java.util.Calendar;
+
+public class Computer extends AbstractEntity {
 
     private String manufacturer;
-    private double serialNumber;
-    private int memory;
+    private int yearMade;
+    private double memory;
 
-    public Computer(String manufacturer, double serialNumber, int memory) {
+    public Computer(String manufacturer, int yearMade, double memory) {
         this.manufacturer = manufacturer;
-        this.serialNumber = serialNumber;
+        this.yearMade = yearMade;
         this.memory = memory;
     }
 
-    public Computer(String manufacturer, double serialNumber) {
-        this.manufacturer = manufacturer;
-        this.serialNumber = serialNumber;
+    public int age(){
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        int age = currentYear - this.yearMade;
+        return age;
+    }
+
+    public double memoryRemaining(double appMb) {
+        this.memory = this.memory - appMb;
+        return this.memory;
     }
 
 }

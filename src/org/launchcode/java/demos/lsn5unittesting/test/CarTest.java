@@ -7,7 +7,6 @@ import static org.testng.AssertJUnit.assertTrue;
 
 import org.junit.Before;
 
-
 public class CarTest {
     Car test_car;
 
