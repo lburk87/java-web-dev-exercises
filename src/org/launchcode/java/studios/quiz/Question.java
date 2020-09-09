@@ -8,7 +8,6 @@ public class Question {
     private static int nextId = 1;
     private String question;
     private Scanner answer;
-    private String correctAnswer;
 
     public Question() {
         this.id = nextId;
@@ -22,7 +21,5 @@ public class Question {
     public void askQuestionGetAnswer() {
         System.out.println(this.question);
         this.answer = new Scanner(System.in);
-        System.out.println("Correct answer: "+this.correctAnswer);
-        System.out.println("Your answer: "+answer);
     }
 }
