@@ -1,14 +1,9 @@
 package org.launchcode.java.studios.quiz;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
-public class Question{
+public abstract class Question{
 
-    private int id;
-
-    public Question(String question, List<Integer> correctAnswer, HashMap<Integer, String> possibleAnswers) {
+    public Question(String question, ArrayList correctAnswer, HashMap<Integer, String> possibleAnswers) {
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.possibleAnswers = possibleAnswers;
@@ -19,19 +14,9 @@ public class Question{
 
     private static int nextId = 1;
     private String question;
-    private List<Integer> correctAnswer;
+    private ArrayList correctAnswer;
     private HashMap<Integer, String> possibleAnswers;
     private Scanner answer;
-
-
-    public Question() {
-        this.id = nextId;
-        nextId++;
-    }
-
-    public int getId() {
-        return id;
-    }
 
     public boolean askQuestionGetAnswer() {
         answer = new Scanner(System.in);
@@ -43,5 +28,7 @@ public class Question{
         return this.correctAnswer.contains(answerInt);
     }
 
-
+    public ArrayList getCorrectAnswer() {
+        return correctAnswer;
+    }
 }

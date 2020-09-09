@@ -1,6 +1,12 @@
 package org.launchcode.java.studios.quiz;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class CheckBox extends Question {
 
-
+    public CheckBox(String question, ArrayList correctAnswer, HashMap<Integer, String> possibleAnswers) {
+        super(question, correctAnswer, possibleAnswers);
+    }
 }
