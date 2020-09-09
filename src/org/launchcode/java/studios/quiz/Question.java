@@ -22,15 +22,11 @@ public abstract class Question{
         }
         List<Integer> answers = new ArrayList<>();
         for (int i =0; i < this.correctAnswer.size(); i++) {
+            System.out.println("Answer #"+(i+1)+":");
             answer = new Scanner(System.in);
-//            try {
                 answers.add(answer.nextInt());
-//            } catch(Exception e) {
-//                System.out.println("u dummyl");
-//            }
         }
 
-//        int answerInt = answer.nextInt();
         for (Integer submittedAnswer : answers) {
             if (!correctAnswer.contains(submittedAnswer)) {
                 return false;
