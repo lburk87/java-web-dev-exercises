@@ -7,28 +7,44 @@ public abstract class Question{
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.possibleAnswers = possibleAnswers;
-
-//        this.possibleAnswers = new HashMap<>();
-//        this.possibleAnswers.put(Integer.parseInt("1"), "true");
     }
 
-    private static int nextId = 1;
     private String question;
-    private ArrayList correctAnswer;
+    private List<Integer> correctAnswer;
     private HashMap<Integer, String> possibleAnswers;
     private Scanner answer;
 
     public boolean askQuestionGetAnswer() {
-        answer = new Scanner(System.in);
+
         System.out.println(this.question);
         for (Map.Entry<Integer, String> entry : possibleAnswers.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
-        int answerInt = answer.nextInt();
-        return this.correctAnswer.contains(answerInt);
+        List<Integer> answers = new ArrayList<>();
+        for (int i =0; i < this.correctAnswer.size(); i++) {
+            answer = new Scanner(System.in);
+//            try {
+                answers.add(answer.nextInt());
+//            } catch(Exception e) {
+//                System.out.println("u dummyl");
+//            }
+        }
+
+//        int answerInt = answer.nextInt();
+        for (Integer submittedAnswer : answers) {
+            if (!correctAnswer.contains(submittedAnswer)) {
+                return false;
+            }
+        }
+        for (Integer correctAnswer : correctAnswer) {
+            if (!answers.contains(correctAnswer)) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    public ArrayList getCorrectAnswer() {
+    public List<Integer> getCorrectAnswer() {
         return correctAnswer;
     }
 }

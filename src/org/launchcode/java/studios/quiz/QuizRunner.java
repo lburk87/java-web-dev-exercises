@@ -3,9 +3,6 @@ import java.util.*;
 
 public class QuizRunner {
 
-    private Question[] questions;
-
-
     public static void main(String[] args) {
 
 //        Question 1
@@ -44,14 +41,22 @@ public class QuizRunner {
         questions.add(question3);
 
 //         Quiz
-        for (int i = 0; i < questions.size(); i++) {
-            if (questions.get(i).askQuestionGetAnswer()) {
-                System.out.println("Correct");
-            } else {
-                System.out.println("Incorrect. Correct answer: "+questions.get(i).getCorrectAnswer());
+        for (int i = 0; i < questions.size(); i++)  {
+            boolean questionUnanswered = true;
+            while(questionUnanswered) {
+                try {
+                    if (questions.get(i).askQuestionGetAnswer()) {
+                        System.out.println("Correct");
+                    } else {
+                        System.out.println("Incorrect. Correct answer: " + questions.get(i).getCorrectAnswer());
+                    }
+                    questionUnanswered = false;
+                } catch(Exception e) {
+                    System.out.println("Enter a number.");
+                }
             }
 
+            }
         }
     }
-}
 
