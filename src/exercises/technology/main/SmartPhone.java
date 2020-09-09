@@ -14,4 +14,7 @@ public class SmartPhone extends Computer {
      }
 
 
+    public String getCarrier() {
+        return carrier;
+    }
 }
