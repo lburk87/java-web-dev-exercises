@@ -1,4 +1,4 @@
-package exercises.technology;
+package exercises.technology.main;
 
 public class AbstractEntity {
 
@@ -10,4 +10,11 @@ public class AbstractEntity {
         nextId++;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

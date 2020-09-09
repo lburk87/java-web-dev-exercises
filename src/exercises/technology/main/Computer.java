@@ -1,4 +1,4 @@
-package exercises.technology;
+package exercises.technology.main;
 
 import java.util.Calendar;
 
@@ -25,4 +25,20 @@ public class Computer extends AbstractEntity {
         return this.memory;
     }
 
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getYearMade() {
+        return yearMade;
+    }
+
+    public double getMemory() {
+        return memory;
+    }
+
+    @Override
+    public String toString() {
+        return "Manufactured by: "+this.manufacturer+ "\nDate: "+this.yearMade;
+    }
 }

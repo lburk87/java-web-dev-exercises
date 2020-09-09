@@ -1,6 +1,6 @@
-package exercises.technology;
+package exercises.technology.main;
 
-class Laptop extends Computer {
+public class Laptop extends Computer {
 
     private double size;
 
@@ -12,4 +12,5 @@ class Laptop extends Computer {
     public boolean biggerThan(double inches) {
         return (this.size > inches);
     }
+
 }
