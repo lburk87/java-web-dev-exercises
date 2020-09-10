@@ -16,13 +16,13 @@ public abstract class Question{
 
     public boolean askQuestionGetAnswer() {
 
-        System.out.println(this.question);
+        System.out.println("\n"+this.question+"");
         for (Map.Entry<Integer, String> entry : possibleAnswers.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
         List<Integer> answers = new ArrayList<>();
         for (int i =0; i < this.correctAnswer.size(); i++) {
-            System.out.println("Answer #"+(i+1)+":");
+            System.out.println("Answer "+(i+1)+" >>  ");
             answer = new Scanner(System.in);
                 answers.add(answer.nextInt());
         }

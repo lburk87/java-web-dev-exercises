@@ -18,12 +18,12 @@ public class QuizRunner {
 //        Question 2
         HashMap<Integer, String> possible2 = new HashMap<>();
         possible2.put(1, "wee");
-        possible2.put(2, "precious");
-        possible2.put(3, "ugly");
+        possible2.put(2, "ugly");
+        possible2.put(3, "precious");
         possible2.put(4, "average");
         ArrayList<Integer> correct2 = new ArrayList<>();
         correct2.add(1);
-        correct2.add(2);
+        correct2.add(3);
         MultipleChoice question2 = new MultipleChoice("What words describe Mabel?", correct2, possible2);
 
 //        Question 3
@@ -41,22 +41,26 @@ public class QuizRunner {
         questions.add(question3);
 
 //         Quiz
+        int score = 0;
         for (int i = 0; i < questions.size(); i++)  {
             boolean questionUnanswered = true;
-            while(questionUnanswered) {
-                try {
-                    if (questions.get(i).askQuestionGetAnswer()) {
-                        System.out.println("Correct");
-                    } else {
-                        System.out.println("Incorrect. Correct answer: " + questions.get(i).getCorrectAnswer());
+                while(questionUnanswered) {
+                    try {
+                        if (questions.get(i).askQuestionGetAnswer()) {
+                            System.out.println("Correct!");
+                            score++;
+                        } else {
+                            System.out.println("Nope. Correct answer(s): " + questions.get(i).getCorrectAnswer());
+                        }
+                        questionUnanswered = false;
+                    } catch(Exception e) {
+                        System.out.println("Enter a number.");
                     }
-                    questionUnanswered = false;
-                } catch(Exception e) {
-                    System.out.println("Enter a number.");
                 }
-            }
 
-            }
+            } System.out.println("\nScore: "+(score/(questions.size())*100+"%"));
+
         }
+
     }
 
