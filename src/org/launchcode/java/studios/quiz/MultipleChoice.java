@@ -1,8 +1,6 @@
 package org.launchcode.java.studios.quiz;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class MultipleChoice extends Question {
 
